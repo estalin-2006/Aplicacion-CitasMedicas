@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <Button
+        android:id="@+id/btnPacientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pacientes"/>
+
+    <Button
+        android:id="@+id/btnMedicos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Médicos"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnCitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Citas"
+        android:layout_marginTop="12dp"/>
+</LinearLayout>

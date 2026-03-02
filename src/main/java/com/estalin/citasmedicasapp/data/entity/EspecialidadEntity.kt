@@ -1,0 +1,14 @@
+
+package com.estalin.citasmedicasapp.data.entity
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+
+
+@Entity(tableName = "especialidades")
+data class EspecialidadEntity(
+    @PrimaryKey(autoGenerate = true)
+    val especialidadId: Int = 0,
+    val nombre: String
+)
