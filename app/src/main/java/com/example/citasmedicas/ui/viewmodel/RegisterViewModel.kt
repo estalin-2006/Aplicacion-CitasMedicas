@@ -5,20 +5,17 @@ import androidx.lifecycle.ViewModelProvider
 import com.estalin.citasmedicasapp.data.AppRepository
 import com.estalin.citasmedicasapp.data.entity.UsuarioEntity
 
-class LoginViewModel(
-    private val repo: AppRepository
-) : ViewModel() {
-
-    suspend fun login(email: String, password: String): UsuarioEntity? {
-        return repo.login(email, password)
+class RegisterViewModel(private val repo: AppRepository) : ViewModel() {
+    suspend fun register(usuario: UsuarioEntity): Boolean {
+        return repo.register(usuario)
     }
 }
 
-class LoginViewModelFactory(private val repository: AppRepository) : ViewModelProvider.Factory {
+class RegisterViewModelFactory(private val repository: AppRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(RegisterViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return LoginViewModel(repository) as T
+            return RegisterViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

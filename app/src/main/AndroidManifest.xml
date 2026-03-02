@@ -11,15 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Citasmedicas">
+        
         <activity
-            android:name=".MainActivity"
+            android:name="com.estalin.citasmedicasapp.ui.screen.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.estalin.citasmedicasapp.ui.screen.RegisterActivity" />
+        <activity android:name="com.estalin.citasmedicasapp.ui.screen.AdminActivity" />
+        <activity android:name="com.estalin.citasmedicasapp.ui.screen.MedicoActivity" />
+        <activity android:name="com.estalin.citasmedicasapp.ui.screen.PacienteActivity" />
+        <activity android:name="com.estalin.citasmedicasapp.ui.screen.AgendarCitaActivity" />
+        <activity android:name="com.estalin.citasmedicasapp.ui.screen.GestionPacientesActivity" />
+        <activity android:name="com.estalin.citasmedicasapp.MainActivity" />
+
     </application>
 
 </manifest>

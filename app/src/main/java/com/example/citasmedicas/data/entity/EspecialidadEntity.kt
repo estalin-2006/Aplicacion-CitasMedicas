@@ -1,4 +1,10 @@
-package com.example.citasmedicas.data.entity
+package com.estalin.citasmedicasapp.data.entity
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-class EspecialidadEntity {
-}
+@Entity(tableName = "especialidades")
+data class EspecialidadEntity(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val nombre: String
+)

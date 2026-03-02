@@ -1,4 +1,4 @@
-package com.example.citasmedicas.data.dao
+package com.estalin.citasmedicasapp.data.dao
 
 class HistorialDao {
 }

@@ -1,4 +1,4 @@
-package com.example.citasmedicas
+package com.estalin.citasmedicasapp
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
