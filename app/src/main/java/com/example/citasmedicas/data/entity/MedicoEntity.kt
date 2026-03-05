@@ -1,22 +1,14 @@
 package com.estalin.citasmedicasapp.data.entity
 
-import androidx.room.*
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Entity(
-    tableName = "medicos",
-    foreignKeys = [
-        ForeignKey(
-            entity = EspecialidadEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["especialidadId"],
-            onDelete = ForeignKey.CASCADE
-        )
-    ],
-    indices = [Index(value = ["especialidadId"])]
-)
+@Entity(tableName = "medicos")
 data class MedicoEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val nombre: String,
-    val especialidadId: Int
+    val email: String, // Correo
+    val rol: String = "MEDICO",
+    val especialidad: String
 )

@@ -34,8 +34,18 @@
         android:id="@+id/rvPacientes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/btnAddPatient"
+        app:layout_constraintBottom_toTopOf="@id/btnSync"
         app:layout_constraintTop_toBottomOf="@id/topBar" />
+
+    <Button
+        android:id="@+id/btnSync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Sincronizar con Supabase"
+        app:layout_constraintBottom_toTopOf="@id/btnAddPatient" />
 
     <Button
         android:id="@+id/btnAddPatient"

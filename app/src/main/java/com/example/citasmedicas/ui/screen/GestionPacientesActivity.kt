@@ -6,6 +6,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.estalin.citasmedicasapp.R
@@ -16,6 +17,7 @@ import com.estalin.citasmedicasapp.data.entity.PacienteEntity
 import com.estalin.citasmedicasapp.ui.adapter.PacienteAdapter
 import com.estalin.citasmedicasapp.ui.viewmodel.PacienteViewModel
 import com.estalin.citasmedicasapp.ui.viewmodel.PacienteViewModelFactory
+import kotlinx.coroutines.launch
 
 class GestionPacientesActivity : AppCompatActivity() {
 
@@ -27,12 +29,19 @@ class GestionPacientesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gestion_pacientes)
 
         val db = AppDatabase.getDatabase(this)
-        val repo = AppRepository(db.usuarioDao(), db.pacienteDao(), RetrofitInstance.api)
+        val repo = AppRepository(
+            db.usuarioDao(), 
+            db.pacienteDao(), 
+            db.medicoDao(), 
+            db.citaDao(), 
+            RetrofitInstance.api
+        )
         viewModel = ViewModelProvider(this, PacienteViewModelFactory(repo))[PacienteViewModel::class.java]
 
         val rvPacientes = findViewById<RecyclerView>(R.id.rvPacientes)
         val btnAddPatient = findViewById<Button>(R.id.btnAddPatient)
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
+        val btnSync = findViewById<Button>(R.id.btnSync)
 
         btnBack.setOnClickListener { finish() }
 
@@ -48,10 +57,26 @@ class GestionPacientesActivity : AppCompatActivity() {
         }
 
         btnAddPatient.setOnClickListener {
-            // Ejemplo rápido: Insertar un paciente de prueba para ver que funciona
-            val nuevo = PacienteEntity(nombre = "Nuevo Paciente", telefono = "0999999999")
+            // Actualizado para coincidir con la entidad: nombre, email, password, rol
+            val nuevo = PacienteEntity(
+                nombre = "Paciente de Prueba",
+                email = "prueba@correo.com",
+                password = "123",
+                rol = "PACIENTE"
+            )
             viewModel.insert(nuevo)
-            Toast.makeText(this, "Paciente de prueba añadido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Paciente añadido y subiendo a Supabase...", Toast.LENGTH_SHORT).show()
+        }
+
+        btnSync.setOnClickListener {
+            lifecycleScope.launch {
+                val success = viewModel.sincronizarConSupabase()
+                if (success) {
+                    Toast.makeText(this@GestionPacientesActivity, "¡Sincronización completa!", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@GestionPacientesActivity, "Error al sincronizar con la nube", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }

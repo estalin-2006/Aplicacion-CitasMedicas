@@ -15,12 +15,11 @@ class PacienteAdapter(
 
     class PacienteViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvNombre: TextView = view.findViewById(R.id.tvNombre)
-        val tvTelefono: TextView = view.findViewById(R.id.tvTelefono)
+        // Se elimina la referencia a tvTelefono
         val btnEdit: View = view.findViewById(R.id.btnEdit)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PacienteViewHolder {
-        // CORRECCIÓN: Se debe usar R.layout para inflar una vista, no R.id
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_paciente, parent, false)
         return PacienteViewHolder(view)
     }
@@ -28,7 +27,7 @@ class PacienteAdapter(
     override fun onBindViewHolder(holder: PacienteViewHolder, position: Int) {
         val paciente = pacientes[position]
         holder.tvNombre.text = paciente.nombre
-        holder.tvTelefono.text = "Teléfono: ${paciente.telefono}"
+        // Se elimina la línea que usaba el teléfono
         holder.btnEdit.setOnClickListener { onEditClick(paciente) }
     }
 

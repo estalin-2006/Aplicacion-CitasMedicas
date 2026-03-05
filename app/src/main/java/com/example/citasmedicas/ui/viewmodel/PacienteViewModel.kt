@@ -20,6 +20,10 @@ class PacienteViewModel(private val repository: AppRepository) : ViewModel() {
     fun delete(paciente: PacienteEntity) = viewModelScope.launch {
         repository.deletePaciente(paciente)
     }
+
+    suspend fun sincronizarConSupabase(): Boolean {
+        return repository.sincronizarPacientesSupabase()
+    }
 }
 
 class PacienteViewModelFactory(private val repository: AppRepository) : ViewModelProvider.Factory {
