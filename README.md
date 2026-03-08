@@ -62,7 +62,8 @@ La aplicación utiliza:
 
 # Diagrama Entidad Relación (DER)
 
-![DER](DER-CitasMedicas.png)
+<img width="1577" height="786" alt="image" src="https://github.com/user-attachments/assets/4545a06e-3549-405c-8551-cf777aa861da" />
+
 
 ---
 
