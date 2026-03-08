@@ -182,7 +182,7 @@ Guarda el historial médico de los pacientes registrado por los médicos.
 
 ---
 
-# 🔗 Relaciones del Sistema
+#  Relaciones del Sistema
 
 Paciente → puede tener **muchas citas**
 
@@ -194,27 +194,39 @@ Médico → puede registrar **historial clínico**
 
 ---
 
-# 📸 Capturas de la Aplicación
+#  Capturas de la Aplicación
 
 ## Pantalla principal
 
-![Home](imagenes/home.png)
+<img width="402" height="841" alt="image" src="https://github.com/user-attachments/assets/d1690777-8970-4a82-a65c-86f77a077087" />
+
 
 ---
 
 ## Registro de pacientes
 
-![Registro](imagenes/registro.png)
+<img width="404" height="786" alt="image" src="https://github.com/user-attachments/assets/ed1d3105-6e83-4461-bc6b-e952167b28f7" />
+
+
+## panel de mdinistrador 
+
+<img width="392" height="767" alt="image" src="https://github.com/user-attachments/assets/c40765a9-4e63-48da-89d8-546090a9abfa" />
+##panel de gesyiona usuarios 
+<img width="396" height="749" alt="image" src="https://github.com/user-attachments/assets/6fafb10b-aa38-49d4-bbfe-93d3d2c2c214" />
+
+## Lista de citas de paciente 
+<img width="390" height="758" alt="image" src="https://github.com/user-attachments/assets/b85d9572-fbb1-4f6c-9b1d-e267b2748761" />
+
+
+## agendar cita  paciente 
+<img width="404" height="648" alt="image" src="https://github.com/user-attachments/assets/af282ec1-86e8-4d64-b9aa-02eb42c82ad1" />
+
+## lista citas del meidoc
+<img width="378" height="886" alt="image" src="https://github.com/user-attachments/assets/119ccf26-f8e0-4cea-822b-88cc40cc9cdc" />
 
 ---
 
-## Lista de citas
-
-![Lista](imagenes/lista.png)
-
----
-
-# ⚙ Tecnologías Utilizadas
+# ⚙Tecnologías Utilizadas
 
 * **Android Studio**
 * **Kotlin**
@@ -226,7 +238,7 @@ Médico → puede registrar **historial clínico**
 
 ---
 
-# 📦 Instalación de la Aplicación
+#  Instalación de la Aplicación
 
 1. Descargar el archivo APK desde el repositorio
 2. Instalar el APK en un dispositivo Android
@@ -240,7 +252,8 @@ Médico → puede registrar **historial clínico**
 El archivo APK generado se encuentra en:
 
 ```
-app/build/outputs/apk/debug/app-debug.apk
+"C:\Users\Personal\OneDrive\Escritorio\Aplicacion-CitasMedicas\app\release\app-release.apk"
+
 ```
 
 ---
